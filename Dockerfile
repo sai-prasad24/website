@@ -13,4 +13,4 @@ COPY . /var/www/html
 EXPOSE 82
 
 # Command to start Apache
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["apache2ctl"]
