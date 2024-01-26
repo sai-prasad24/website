@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y apache2
 WORKDIR /var/www/html
 
 # Copy code into the container
-COPY /var/lib/jenkins/workspace/Intellipat_casestudy /var/www/html
+COPY . /var/www/html
 
 # Expose port 82 for master branch
 EXPOSE 82
