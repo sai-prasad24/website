@@ -1,16 +1,6 @@
-FROM ubuntu:latest
-
-# Install Apache
-RUN apt-get update && apt-get install -y apache2
-
-# Set the working directory
-WORKDIR /var/www/html
-
-# Copy code into the container
+FROM ubuntu 
+RUN apt-get update -y && apt-get install -y apache2
+WORKDIR   /var/www/html
 COPY . /var/www/html
-
-# Expose port 82 for master branch
 EXPOSE 82
-
-# Command to start Apache
-CMD ["apache2ctl"]
+CMD ["apache2ctl", "-D", "FOREGROUND"]
